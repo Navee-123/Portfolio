@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Naveena's personal portfolio website">
+  <title>Naveena | My Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fffaf6;
+      --white: #ffffff;
+      --pink: #f6dce5;
+      --lavender: #e8e2f7;
+      --peach: #ffe6d5;
+      --purple: #75618f;
+      --dark: #302b35;
+      --muted: #77717b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 88%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 250, 246, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #f0e8e8;
+    }
+
+    nav {
+      min-height: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 27px;
+      color: var(--purple);
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--purple);
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 27px;
+      cursor: pointer;
+      color: var(--dark);
+    }
+
+    /* COMMON */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading span {
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 39px;
+      margin-top: 8px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding: 65px 0;
+      background:
+        radial-gradient(circle at 10% 20%, #f8e6ed 0, transparent 28%),
+        radial-gradient(circle at 90% 80%, #ece7fa 0, transparent 30%);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .hello {
+      color: var(--purple);
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(45px, 7vw, 76px);
+      line-height: 1.12;
+      margin: 15px 0;
+    }
+
+    .hero h1 span {
+      color: var(--purple);
+    }
+
+    .hero-description {
+      max-width: 540px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--purple);
+      color: white;
+      padding: 13px 27px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: 0.3s;
+      border: 2px solid var(--purple);
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--purple);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--purple);
+      margin-left: 10px;
+    }
+
+    .btn-outline:hover {
+      background: var(--purple);
+      color: white;
+    }
+
+    .hero-card {
+      background: var(--white);
+      padding: 18px;
+      border-radius: 180px 180px 35px 35px;
+      box-shadow: 0 15px 45px rgba(80, 60, 90, 0.12);
+      max-width: 350px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 370px;
+      border-radius: 160px 160px 25px 25px;
+      background: linear-gradient(145deg, var(--pink), var(--lavender));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 95px;
+    }
+
+    .hero-card p {
+      padding: 15px 5px 5px;
+      color: var(--purple);
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-art {
+      min-height: 330px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--peach), var(--pink), var(--lavender));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 100px;
+    }
+
+    .about-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 29px;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .about-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .detail {
+      background: white;
+      border: 1px solid #f0e8ed;
+      padding: 13px;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+
+    .detail strong {
+      color: var(--purple);
+    }
+
+    /* INTERESTS */
+
+    .interests {
+      background: #fff4f4;
+    }
+
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .interest-card {
+      background: white;
+      border-radius: 22px;
+      padding: 35px 25px;
+      text-align: center;
+      border: 1px solid #f4e8ed;
+      transition: 0.3s;
+    }
+
+    .interest-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(80, 60, 90, 0.09);
+    }
+
+    .interest-icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .interest-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .interest-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* EDUCATION */
+
+    .education-card {
+      max-width: 750px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-left: 5px solid var(--purple);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(80, 60, 90, 0.07);
+    }
+
+    .education-card .year {
+      color: var(--purple);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .education-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      margin: 8px 0;
+    }
+
+    .education-card p {
+      color: var(--muted);
+    }
+
+    /* SKILLS */
+
+    .skills {
+      background: #f8f5fc;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill {
+      background: white;
+      padding: 22px;
+      border-radius: 15px;
+      text-align: center;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      background: var(--lavender);
+      transform: scale(1.03);
+    }
+
+    .skill span {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    /* GALLERY */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-item {
+      min-height: 220px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 23px;
+      transition: 0.3s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-item:nth-child(1) {
+      background: var(--pink);
+    }
+
+    .gallery-item:nth-child(2) {
+      background: var(--lavender);
+    }
+
+    .gallery-item:nth-child(3) {
+      background: var(--peach);
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #fff4f4;
+    }
+
+    .contact-box {
+      max-width: 750px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 22px;
+      box-shadow: 0 10px 35px rgba(80, 60, 90, 0.07);
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .contact-links a {
+      color: var(--purple);
+      background: #f5f0fa;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .contact-links a:hover {
+      background: var(--purple);
+      color: white;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #e8dfe9;
+      border-radius: 10px;
+      font: inherit;
+      outline: none;
+      background: #fffdfd;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--purple);
+    }
+
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      cursor: pointer;
+      font: inherit;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      background: #f8f1f5;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer span {
+      color: var(--purple);
+      font-weight: 700;
+    }
+
+    /* ANIMATION */
+
+    .reveal {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+    /* RESPONSIVE */
+
+    @media (max-width: 768px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: var(--bg);
+        flex-direction: column;
+        padding: 25px;
+        gap: 20px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero-content,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-card {
+        max-width: 300px;
+      }
+
+      .hero-image {
+        height: 310px;
+      }
+
+      .interest-grid,
+      .skill-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading h2 {
+        font-size: 32px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .about-art {
+        min-height: 250px;
+      }
+
+      .btn-outline {
+        margin: 10px 0 0;
+      }
+    }
+    /* DARK MODE BUTTON */
+
+.theme-btn {
+  background: var(--lavender);
+  color: var(--dark);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: inherit;
+  transition: 0.3s;
+}
+
+.theme-btn:hover {
+  transform: scale(1.05);
+}
+
+/* DARK THEME */
+
+body.dark-mode {
+  --bg: #191722;
+  --white: #272433;
+  --pink: #493344;
+  --lavender: #39314f;
+  --peach: #49382f;
+  --purple: #c5a8ee;
+  --dark: #f7f0ff;
+  --muted: #c0b8ca;
+
+  background: var(--bg);
+  color: var(--dark);
+}
+
+body.dark-mode header,
+body.dark-mode .nav-links {
+  background: #211e2b;
+  border-color: #393344;
+}
+
+body.dark-mode .interests,
+body.dark-mode .contact {
+  background: #211e2b;
+}
+
+body.dark-mode .skills {
+  background: #252131;
+}
+
+body.dark-mode .interest-card,
+body.dark-mode .skill,
+body.dark-mode .education-card,
+body.dark-mode .contact-box,
+body.dark-mode .detail {
+  background: var(--white);
+  border-color: #494154;
+}
+
+body.dark-mode .hero-card {
+  background: var(--white);
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background: #302b3c;
+  color: white;
+  border-color: #51475e;
+}
+
+body.dark-mode .contact-links a {
+  background: #39314f;
+  color: #e5d8ff;
+}
+
+body.dark-mode footer {
+  background: #211e2b;
+  color: var(--muted);
+}
+
+body.dark-mode .theme-btn {
+  background: #39314f;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .theme-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+/* TYPING ANIMATION */
+
+.typing-cursor {
+  color: var(--purple);
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">Naveena.</a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">
+        ☰
+      </button>
+      <button class="theme-btn" id="themeBtn">
+  🌙 Dark Mode
+</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+
+      <div class="reveal">
+        <p class="hello">HELLO, WELCOME TO MY WORLD ✨</p>
+
+        <h1>
+  Hey, I'm <span id="typed-text">Naveena!</span>
+  <span class="typing-cursor">|</span>
+</h1>
+
+        <p class="hero-description">
+          A creative mind, a curious learner and a Computer Science
+          Engineering student who loves exploring technology,
+          creativity and new experiences.
+        </p>
+
+        <a href="#about" class="btn">Discover More</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+
+      <div class="hero-card reveal">
+        <div class="hero-image">🌸</div>
+        <p>Dream. Create. Explore.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span>Get to know me</span>
+        <h2>About Me</h2>
+        <p>A little introduction about who I am.</p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-art reveal">💜</div>
+
+        <div class="about-text reveal">
+          <h3>Turning Curiosity Into Creativity</h3>
+
+          <p>
+            Hi! I'm Naveena, a second-year B.Tech Computer Science
+            Engineering student at Jawaharlal College of Engineering
+            and Technology.
+          </p>
+
+          <p>
+            I enjoy learning new things, exploring technology and
+            expressing myself through creativity. I believe every
+            experience is an opportunity to grow and become better.
+          </p>
+
+          <p>
+            Outside academics, I love dancing, creating content and
+            going on drives. I enjoy making memories and discovering
+            something new every day.
+          </p>
+
+          <div class="about-details">
+            <div class="detail"><strong>Name:</strong> Naveena</div>
+            <div class="detail"><strong>Course:</strong> B.Tech CSE</div>
+            <div class="detail"><strong>Year:</strong> Second Year</div>
+            <div class="detail"><strong>College:</strong> JCET</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERESTS -->
+  <section class="interests" id="interests">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span>What I love</span>
+        <h2>My Interests</h2>
+        <p>Things that make me feel happy and inspired.</p>
+      </div>
+
+      <div class="interest-grid">
+
+        <div class="interest-card reveal">
+          <div class="interest-icon">💃</div>
+          <h3>Dancing</h3>
+          <p>
+            Dancing is my happy place. It helps me express emotions,
+            enjoy the moment and feel confident.
+          </p>
+        </div>
+
+        <div class="interest-card reveal">
+          <div class="interest-icon">📸</div>
+          <h3>Content Creation</h3>
+          <p>
+            I love creating content, capturing moments and sharing
+            creative ideas with the world.
+          </p>
+        </div>
+
+        <div class="interest-card reveal">
+          <div class="interest-icon">🚗</div>
+          <h3>Driving</h3>
+          <p>
+            I enjoy driving, exploring new places and experiencing
+            the freedom of every journey.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span>My academic journey</span>
+        <h2>Education</h2>
+        <p>Learning today, building tomorrow.</p>
+      </div>
+
+      <div class="education-card reveal">
+        <span class="year">CURRENTLY PURSUING</span>
+        <h3>Bachelor of Technology</h3>
+        <p><strong>Computer Science and Engineering</strong></p>
+        <p>Jawaharlal College of Engineering and Technology</p>
+        <p>Second Year Student</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span>What I bring</span>
+        <h2>My Skills</h2>
+        <p>Skills I'm learning and developing.</p>
+      </div>
+
+      <div class="skill-grid">
+
+        <div class="skill reveal">
+          <span>💻</span>
+          Programming
+        </div>
+
+        <div class="skill reveal">
+          <span>🌐</span>
+          Web Development
+        </div>
+
+        <div class="skill reveal">
+          <span>🧩</span>
+          Problem Solving
+        </div>
+
+        <div class="skill reveal">
+          <span>🎨</span>
+          Creativity
+        </div>
+
+        <div class="skill reveal">
+          <span>💬</span>
+          Communication
+        </div>
+
+        <div class="skill reveal">
+          <span>📱</span>
+          Content Creation
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATIVE SPACE -->
+  <section id="gallery">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span>My little universe</span>
+        <h2>Creative Space</h2>
+        <p>A collection of things that represent me.</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-item reveal">
+          💃<br>Dance Moments
+        </div>
+
+        <div class="gallery-item reveal">
+          📷<br>Creative Stories
+        </div>
+
+        <div class="gallery-item reveal">
+          🚘<br>Road Trip Diaries
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span>Let's connect</span>
+        <h2>Get In Touch</h2>
+        <p>Have an idea or just want to say hello? I'd love to hear from you!</p>
+      </div>
+
+      <div class="contact-box reveal">
+
+        <p>
+          Feel free to connect with me through email or social media.
+        </p>
+
+        <div class="contact-links">
+          <!-- Replace these links with your actual profiles -->
+          <a href="mailto:your.email@example.com">✉ Email</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">📷 Instagram</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">💼 LinkedIn</a>
+          <a href="https://github.com/" target="_blank" rel="noopener">💻 GitHub</a>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            required
+          >
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Your Email"
+            required
+          >
+
+          <textarea
+            id="message"
+            placeholder="Write your message..."
+            required
+          ></textarea>
+
+          <button type="submit" class="btn">Send Message ✨</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Made with 💜 by <span>Naveena</span></p>
+    <p>© <span id="year"></span> Naveena. All rights reserved.</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Mobile navigation menu
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+    });
+
+    // Close menu after clicking a link
+    document.querySelectorAll(".nav-links a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+      });
+    });
+
+    // Reveal animation while scrolling
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealElements.forEach(function (element) {
+      observer.observe(element);
+    });
+
+    // Automatically update footer year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Contact form: opens the visitor's email application
+
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  const recipient = "your.email@example.com";
+
+  const subject = encodeURIComponent("Portfolio message from " + name);
+
+  const body = encodeURIComponent(
+    "Name: " + name +
+    "\nEmail: " + email +
+    "\n\nMessage:\n" + message
+  );
+
+  window.location.href =
+    "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
+});
+
+
+// DARK MODE / LIGHT MODE
+
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", function () {
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    themeBtn.textContent = "☀️ Light Mode";
+  } else {
+    themeBtn.textContent = "🌙 Dark Mode";
+  }
+});
+
+
+// TYPING ANIMATION
+
+const typedText = document.getElementById("typed-text");
+
+const words = [
+  "Naveena!",
+  "a CSE Student!",
+  "a Creative Soul!"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+  const currentWord = words[wordIndex];
+
+  if (deleting) {
+    charIndex--;
+  } else {
+    charIndex++;
+  }
+
+  typedText.textContent = currentWord.substring(0, charIndex);
+
+  let speed = deleting ? 70 : 120;
+
+  if (!deleting && charIndex === currentWord.length) {
+    deleting = true;
+    speed = 1200;
+  } else if (deleting && charIndex === 0) {
+    deleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+    speed = 400;
+  }
+
+  setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+</script>
+
+</body>
+</html>
